@@ -42,11 +42,12 @@ class Welcome extends CI_Controller
 				);
 
 				$this->session->set_userdata([
-					'id' => $data->id,
-					'name' => $data->name
+					'id' => $data['user']->id,
+					'name' => $data['user']->name
 				]);
 
-				$this->load->view("welcome_message", $data);
+				redirect('/home', 'refresh');
+
 			}
 		}
 	}
