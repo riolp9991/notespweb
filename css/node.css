@@ -42,6 +42,56 @@ nav ul li a:hover {
 	background: #eee;
 }
 
+.container {
+	padding: 10px 30px;
+}
+
+.note {
+	background: white;
+	padding: 20px;
+}
+
+.note .actions {
+	display: flex;
+	margin-top: 10px;
+	justify-content: end;
+}
+
+.actions button {
+	margin-left: 20px;
+	border: none;
+	padding: 10px 15px;
+	cursor: pointer;
+	transition: 0.3s;
+}
+
+.actions button:hover,
+.actions button:focus {
+	color: white;
+	background: #2b2b2b;
+}
+
+.actionbar {
+	display: flex;
+	justify-content: end;
+	margin-bottom: 10px;
+}
+
+.actionbar button {
+	background: white;
+	margin-left: 20px;
+	border: none;
+	padding: 10px 15px;
+	cursor: pointer;
+	transition: 0.3s;
+}
+
+.actionbar button:hover,
+.actionbar button:focus {
+	color: white;
+	background: #2b2b2b;
+}
+
 @media only screen and (max-width: 600px) {
 	nav {
 		flex-direction: column;

@@ -14,7 +14,7 @@ if(!isset($_SESSION['id'])){
 <body>
 <header>
 <nav>
-	<h1><?php echo ucwords($field) ?></h1>
+	<h1><?php echo ucwords($field); ?></h1>
 	<ul>
 		<li><a href="#">Salir</a></li>
 		<li><a href="#">Notas</a></li>
@@ -22,8 +22,10 @@ if(!isset($_SESSION['id'])){
 	</ul>
 </nav>
 </header>
-<?php if(isset($field)):?>
-<?php require_once(APPPATH . '/views/' . $field . '.php') ?>
-<?php endif ?>
+<div class="container">
+<?php if (isset($field)): ?>
+<?php require_once APPPATH . "/views/" . $field . ".php"; ?>
+<?php endif; ?>
+</div>
 </body>
 </html>

@@ -58,7 +58,7 @@ class Welcome extends CI_Controller
 
 		$this->form_validation->set_rules("name", "Nombre", "required|min_length[3]|is_unique[user.name]");
 		$this->form_validation->set_rules("password", "Contrasena", "required");
-		$this->form_validation->set_rules("checkpassword", "Contrasena", "required|matches[password]");
+		$this->form_validation->set_rules("checkpassword", "Verificar Contrasena", "required|matches[password]");
 
 		if ($this->input->server("REQUEST_METHOD") === "GET") {
 			$this->load->view("register");
