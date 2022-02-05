@@ -1,5 +1,16 @@
 <div class="actionbar">
-<button>Crear Nota</button>
+<button id="create">Crear Nota</button>
+</div>
+
+<div class="float-form">
+<form action="">
+<h1>Crear Nota</h1>
+<input type="hidden" name="id" name="hiddenId">
+<input type="text" placeholder="Nombre" name="name">
+<textarea name="text" id="" cols="30" rows="10"></textarea>
+<button>Crear</button>
+<a href="#" id="cancelCreate">Cancelar</a>
+</form>
 </div>
 
 <div class="note">
@@ -12,3 +23,5 @@
 </form>
 </div>
 </div>
+
+<script src="<?php echo base_url(); ?>js/notes.js" defer></script>

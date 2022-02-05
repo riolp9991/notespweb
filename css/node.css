@@ -92,6 +92,97 @@ nav ul li a:hover {
 	background: #2b2b2b;
 }
 
+.float-form {
+	position: fixed;
+	visibility: hidden;
+	background: white;
+	padding: 10px;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	box-shadow: 0px 0px 16px lightgray;
+	min-width: 30%;
+}
+
+.float-form.active {
+	visibility: visible;
+}
+
+.float-form form {
+	display: flex;
+	flex-direction: column;
+}
+
+.float-form form h1 {
+	text-align: center;
+	padding: 4px;
+	font-size: 20px;
+	margin-bottom: 5px;
+}
+
+textarea,
+input {
+	padding: 10px 15px;
+	margin-bottom: 10px;
+	border: 1px solid #eee;
+	outline: none;
+	transition: 0.3s;
+}
+
+textarea:focus,
+textarea:hover,
+input:focus,
+input:hover {
+	border: 1px solid #2b2b2b;
+}
+
+form button {
+	cursor: pointer;
+	outline: none;
+	border: none;
+	background: #eee;
+	color: #2b2b2b;
+	border-radius: 0;
+	padding: 10px 15px;
+	transition: 0.3s;
+}
+
+form button:hover,
+form button:focus {
+	background: #2b2b2b;
+	color: #eee;
+}
+
+form a {
+	display: block;
+	text-decoration: none;
+	color: #5c5c5c;
+	margin-top: 10px;
+	font-size: 14px;
+	transition: 0.3s;
+}
+
+form a:focus,
+form a:hover {
+	color: #2b2b2b;
+}
+
+.error {
+	background: #f1c4c4;
+	padding: 5px;
+	font-size: 14px;
+	margin-bottom: 10px;
+	border: 1px solid #ff5e5e;
+}
+
+.success {
+	background: #a0fc9e;
+	padding: 5px;
+	font-size: 14px;
+	margin-bottom: 10px;
+	border: 1px solid #54c181;
+}
+
 @media only screen and (max-width: 600px) {
 	nav {
 		flex-direction: column;
