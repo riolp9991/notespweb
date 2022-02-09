@@ -49,6 +49,7 @@ nav ul li a:hover {
 .note {
 	background: white;
 	padding: 20px;
+	margin-bottom: 10px;
 }
 
 .note .actions {
