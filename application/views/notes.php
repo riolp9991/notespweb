@@ -10,7 +10,7 @@
 ]; ?>">
 <input type="hidden" id="noteID" name="noteID" value="">
 <input type="hidden" id="isEditting" name="editing" value="false">
-<input type="text" id="nameText" placeholder="Nombre" name="name">
+<input type="text" required id="nameText" placeholder="Nombre" name="name">
 <textarea name="text" id="textText" required cols="30" rows="10"></textarea>
 <button>Guardar</button>
 <a href="#" id="cancelCreate">Cancelar</a>
