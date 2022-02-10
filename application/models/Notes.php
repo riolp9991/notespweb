@@ -26,4 +26,14 @@ class Notes extends CI_Model
 		$this->db->where("id", $id);
 		$this->db->delete("notes");
 	}
+
+	public function update($id, $name, $text)
+	{
+		$this->db->where("id", $id);
+		$this->name = $name;
+		$this->text = $text;
+		$this->user = $_SESSION["id"];
+
+		$this->db->update("notes", $this);
+	}
 }

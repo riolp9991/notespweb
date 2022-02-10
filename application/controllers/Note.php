@@ -29,6 +29,17 @@ class Note extends CI_Controller
 				redirect("/home", "refresh");
 				return;
 			}
+
+			if ($this->input->post("editing") == "true") {
+				$this->notes->update(
+					$this->input->post("noteID"),
+					$this->input->post("name"),
+					$this->input->post("text")
+				);
+				$data["created"] = "Editado Satisfactoriamente";
+				redirect("/home", "refresh");
+				return;
+			}
 		}
 	}
 }
