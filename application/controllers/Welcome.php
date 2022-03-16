@@ -47,7 +47,6 @@ class Welcome extends CI_Controller
 				]);
 
 				redirect('/home', 'refresh');
-
 			}
 		}
 	}
@@ -57,15 +56,15 @@ class Welcome extends CI_Controller
 		$this->load->library("form_validation");
 
 		$this->form_validation->set_rules("name", "Nombre", "required|min_length[3]|is_unique[user.name]");
-		$this->form_validation->set_rules("password", "Contrasena", "required");
-		$this->form_validation->set_rules("checkpassword", "Verificar Contrasena", "required|matches[password]");
+		$this->form_validation->set_rules("password", "Contraseña", "required");
+		$this->form_validation->set_rules("checkpassword", "Verificar Contraseña", "required|matches[password]");
 
 		if ($this->input->server("REQUEST_METHOD") === "GET") {
 			$this->load->view("register");
 		} elseif ($this->input->server("REQUEST_METHOD") === "POST") {
 			if ($this->form_validation->run() === false) {
 				$data["error"] =
-					"Ha ocurrido un error verifique todos los campos, puede que las contrasenas no coinsidan";
+					"Ha ocurrido un error verifique todos los campos, puede que las contraseñas no coinsidan";
 				$this->load->view("register", $data);
 			} else {
 				$this->load->model("user");

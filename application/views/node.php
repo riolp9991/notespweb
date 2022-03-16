@@ -23,8 +23,12 @@ if (!isset($_SESSION['id'])) {
 				<li>
 					<?php echo anchor('/', 'Salir') ?>
 				</li>
-				<li><a href="#">Notas</a></li>
-				<li><a href="#">To-Do</a></li>
+				<li>
+					<?php echo anchor("/home", "Notas") ?>
+				</li>
+				<li>
+					<?php echo anchor("/todo", "ToDo") ?>
+				</li>
 			</ul>
 		</nav>
 	</header>
