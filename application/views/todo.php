@@ -29,7 +29,7 @@
 
 <div class="float-form">
     <button class="float-add">Añadir</button>
-    <?php echo form_open("/home", ["method" => "POST"]); ?>
+    <?php echo form_open("/todo", ["method" => "POST"]); ?>
     <h1 id="floatTitle">Crear ToDo</h1>
     <input type="hidden" name="id" name="hiddenId" value="<?php echo $_SESSION["id"]; ?>">
     <input type="hidden" id="noteID" name="noteID" value="">
@@ -74,6 +74,7 @@
         task.classList.add("create-task")
         const input = document.createElement("input")
         input.id = "task-" + idx
+        input.name = "task-" + idx
         task.appendChild(input)
         const reference = document.createElement("a")
         reference.classList.add("delete")
