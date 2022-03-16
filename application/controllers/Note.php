@@ -10,6 +10,7 @@ class Note extends CI_Controller
 	public function index()
 	{
 		if ($this->input->server("REQUEST_METHOD") === "GET") {
+			if (!isset($_SESSION["id"])) redirect("/", "refresh");
 			$data["field"] = "notes";
 			$data["notes"] = $this->notes->get();
 			$this->load->view("node", $data);
