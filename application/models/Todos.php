@@ -46,6 +46,15 @@ class Todos extends CI_Model
 
         return $result;
     }
+
+    public function delete($id)
+    {
+        $this->db->where("todo", $id);
+        $this->db->delete("todoitem");
+
+        $this->db->where("id", $id);
+        $this->db->delete('todo');
+    }
 }
 
 /* End of file Todo.php */

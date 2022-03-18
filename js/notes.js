@@ -20,6 +20,7 @@ createButton.addEventListener("click", () => {
 	floatTitle.innerHTML = "Crear Nota";
 });
 
+if(document.querySelector("#cancelCreate")){
 document.querySelector("#cancelCreate").addEventListener("click", (e) => {
 	e.preventDefault();
 	nameText.value = "";
@@ -27,7 +28,8 @@ document.querySelector("#cancelCreate").addEventListener("click", (e) => {
 	isEditting.value = "false";
 	float.classList.toggle("active");
 	floatTitle.innerHTML = "Crear Nota";
-});
+})
+}
 
 const idInput = document.querySelector("#noteID");
 

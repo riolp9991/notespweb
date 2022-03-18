@@ -36,6 +36,12 @@
         padding: 0;
         list-style: none;
     }
+
+    .todo .actions {
+        display: flex;
+        align-items: flex-end;
+        justify-content: end;
+    }
 </style>
 
 <div class="float-form">
@@ -53,7 +59,7 @@
         </div>
     </div>
     <button>Guardar</button>
-    <a href="#" id="cancelCreate">Cancelar</a>
+    <a href="#" id="cancelCreation">Cancelar</a>
     </form>
 </div>
 
@@ -65,6 +71,12 @@
                 <?php foreach ($value[1] as $task) : ?>
                     <li>♦ <?php echo $task->text ?></li>
                 <?php endforeach ?>
+                <div class="actions">
+                    <?php echo form_open("/todo", ["method" => "POST"]); ?>
+                    <input type="hidden" name="delete" value="<?php echo $value[0]->id; ?>">
+                    <button>Eliminar</button>
+                    </form>
+                </div>
             </ul>
         </div>
     <?php endforeach ?>
@@ -116,4 +128,15 @@
     }
 
     generateTasks()
+
+    if (document.querySelector("#cancelCreation")) {
+        const cancel = document.querySelector("#cancelCreation")
+        console.log("HELLO")
+        console.log({
+            cancel
+        })
+        cancel.addEventListener("click", () => {
+            float.classList.toggle("active")
+        })
+    }
 </script>

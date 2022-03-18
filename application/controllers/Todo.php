@@ -31,7 +31,15 @@ class Todo extends CI_Controller
 
                 $this->todos->insert($this->input->post("name"), $postItems);
                 redirect("/todo", "refresh");
+                return;
             }
+        }
+
+        if (isset($_POST["delete"])) {
+            $this->todos->delete($_POST["delete"]);
+
+            redirect("/todo");
+            return;
         }
     }
 }
