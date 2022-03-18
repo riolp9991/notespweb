@@ -27,6 +27,25 @@ class Todos extends CI_Model
             $this->task->insert($task, $insert_id);
         }
     }
+
+    public function get()
+    {
+        $query = $this->db->get_where("todo", ["user" => $_SESSION["id"]]);
+
+        $todos = $query->result();
+
+        $result = array();
+
+        foreach ($todos as  $value) {
+            $element = array();
+            array_push($element, $value);
+            array_push($element, $this->task->get($value->id));
+
+            array_push($result, $element);
+        }
+
+        return $result;
+    }
 }
 
 /* End of file Todo.php */

@@ -46,6 +46,10 @@
     </form>
 </div>
 
+<div>
+    <?php var_dump($todo) ?>
+</div>
+
 <script src="<?php echo base_url(); ?>js/notes.js" defer></script>
 <script>
     let items = []

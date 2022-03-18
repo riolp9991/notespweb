@@ -13,6 +13,13 @@ class Task extends CI_Model
 
         $this->db->insert('todoitem', $this);
     }
+
+    public function get($todo)
+    {
+        $query = $this->db->get_where("todoitem", ["todo" => $todo]);
+
+        return $query->result();
+    }
 }
 
 /* End of file Task.php */
