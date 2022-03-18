@@ -25,6 +25,17 @@
         background: white;
         cursor: pointer;
     }
+
+    .todo {
+        background: white;
+        padding: 20px;
+        margin-bottom: 10px;
+    }
+
+    .todo ul {
+        padding: 0;
+        list-style: none;
+    }
 </style>
 
 <div class="float-form">
@@ -47,7 +58,16 @@
 </div>
 
 <div>
-    <?php var_dump($todo) ?>
+    <?php foreach ($todo as $value) : ?>
+        <div class="todo">
+            <h1><?php echo $value[0]->name ?></h1>
+            <ul>
+                <?php foreach ($value[1] as $task) : ?>
+                    <li>♦ <?php echo $task->text ?></li>
+                <?php endforeach ?>
+            </ul>
+        </div>
+    <?php endforeach ?>
 </div>
 
 <script src="<?php echo base_url(); ?>js/notes.js" defer></script>

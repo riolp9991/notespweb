@@ -14,7 +14,7 @@ class Todo extends CI_Controller
     {
         if ($this->input->server("REQUEST_METHOD") === "GET") {
             if (!isset($_SESSION["id"])) redirect("/", "refresh");
-            $data["field"] = "todo";
+            $data["field"] = "list";
             $data["todo"] = $this->todos->get();
 
             $this->load->view("node", $data);

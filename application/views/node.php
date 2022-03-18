@@ -27,7 +27,7 @@ if (!isset($_SESSION['id'])) {
 					<?php echo anchor("/home", "Notas") ?>
 				</li>
 				<li>
-					<?php echo anchor("/todo", "ToDo") ?>
+					<?php echo anchor("/todo", "Listas") ?>
 				</li>
 			</ul>
 		</nav>
